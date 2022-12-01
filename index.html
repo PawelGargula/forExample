@@ -6,12 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script defer src="create-periods.js"></script>
   <style>
     .bold {
       font-weight: bold;
     }
   </style>
+  <script defer src="create-periods.js"></script>
 </head>
 
 <body>
@@ -19,7 +19,7 @@
   <main>
     <h2>Current period: 2014-01</h2>
     <label for="periods">Periods</label>
-    <input type="number" id="periods" min="1" value="1">
+    <input type="number" id="periods" min="1" max="10000" value="1">
     <h3 class="bold">Created periods:</h3>
     <p id="created-periods">2014-01</p>
 

@@ -4,7 +4,9 @@ const periodsNumberDOM = document.querySelector("input");
 const createdPeriodsDOM = document.querySelector("#created-periods");
 
 periodsNumberDOM.addEventListener("input", () => {
-    let periodsToCreate = Number(periodsNumberDOM.value);
+    let periodsToCreate = Number(periodsNumberDOM.value) < 1 || Number(periodsNumberDOM.value) > 10_000
+        ? 1
+        : Math.floor(Number(periodsNumberDOM.value));
     let periodsString = new Array(periodsToCreate)
         .fill(null)
         .map((val, index) => {
