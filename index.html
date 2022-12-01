@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-<html class="no-js">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Modernizr JavaScript example</title>
-    
-    <script src="modernizr-custom.js"></script>
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=API_KEY"></script>
-    <style>
-      #map_canvas {
-        width: 600px;
-        height: 600px;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Simple maps example</h1>
+<html lang="en">
 
-    <div id="map_canvas"></div>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer src="create-periods.js"></script>
+  <style>
+    .bold {
+      font-weight: bold;
+    }
+  </style>
+</head>
 
-    <script>
-        if (Modernizr.geolocation) {
-            navigator.geolocation.getCurrentPosition(function(position) {
-                let latlng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                let myOptions = {
-                    zoom: 8,
-                    center: latlng,
-                    mapTypeId: google.maps.MapTypeId.TERRAIN,
-                    disableDefaultUI: true
-                };
-                let map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
-            });
-        } else {
-            const para = document.createElement('p');
-            para.textContent = 'Argh, no geolocation!';
-            document.body.appendChild(para);
-        }
-    </script>
-  </body>
+<body>
+  <h1>Create periods</h1>
+  <main>
+    <h2>Current period: 2014-01</h2>
+    <label for="periods">Periods</label>
+    <input type="number" id="periods" min="1" value="1">
+    <h3 class="bold">Created periods:</h3>
+    <p id="created-periods">2014-01</p>
+
+  </main>
+</body>
+
 </html>
